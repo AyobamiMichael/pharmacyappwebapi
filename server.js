@@ -188,7 +188,7 @@ app.get('/', (req, res) =>{
   
 // Get the list of pharmacies
   
-app.get('/api/listpharmacies', (req, res) =>{
+app.get('/listpharmacies', (req, res) =>{
   Pharma.find()
           .select('pname paddress phone uname state')
           .exec((err, data) =>{
