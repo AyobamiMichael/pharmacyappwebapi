@@ -432,7 +432,7 @@ app.post("/deletedrug", async (req, res)=>{
 
 
   app.get('/viewalldrugs', (req, res) =>{
-    Pharma.find()
+    Drug.find()
             .select('drugname mg pricepercard pricepercarton priceperpack pname paddress phone drugcategory expdate')
             .exec((err, data) =>{
                 if(!err){
