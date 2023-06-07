@@ -429,6 +429,18 @@ app.post("/deletedrug", async (req, res)=>{
     } catch (error) {}
   });
 
+
+
+  app.get('/viewalldrugs', (req, res) =>{
+    Pharma.find()
+            .select('drugname mg pricepercard pricepercarton priceperpack pname paddress phone drugcategory expdate')
+            .exec((err, data) =>{
+                if(!err){
+                    res.json(data)
+                }
+            })
+  });
+
   /*
     app.get('/api/pharmacy', (req, res) =>{
     Pharmacy.find()
